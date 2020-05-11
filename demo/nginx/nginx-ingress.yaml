@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: nginx-demo-ingress
+  annotations:
+    cert-manager.io/issuer: nginx-demo-letsencrypt
+    kubernetes.io/ingress.class: "traefik"
+spec:
+  tls:
+  - hosts:
+    - nginx.demo.k3cloud.gq
+    secretName: nginx-demo-secret
+  rules:
+  - host: nginx.demo.k3cloud.gq
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: nginx-demo-svc
+          servicePort: 80
