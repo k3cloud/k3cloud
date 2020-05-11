@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: random-webserver-demo-deploy
+  labels:
+    app: random-webserver-demo
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: random-webserver-demo
+  template:
+    metadata:
+      labels:
+        app: random-webserver-demo
+    spec:
+      containers:
+      - name: random-webserver-demo
+        image: stephanlindauer/docker-random-webserver
+        ports:
+        - containerPort: 80
