@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: nginx-sample-ingress
+  annotations:
+    cert-manager.io/issuer: nginx-sample-letsencrypt
+    kubernetes.io/ingress.class: "traefik"
+spec:
+  tls:
+  - hosts:
+    - nginx.sample.k3cloud.gq
+    secretName: nginx-sample-secret
+  rules:
+  - host: nginx.sample.k3cloud.gq
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: nginx-sample-svc
+          servicePort: 80

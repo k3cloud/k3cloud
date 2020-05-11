@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: foaas-sample-deploy
+  labels:
+    app: foaas-sample
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: foaas-sample
+  template:
+    metadata:
+      labels:
+        app: foaas-sample
+    spec:
+      containers:
+      - image: eif0/foaas:2.1.0
+        name: foaas-sample
+        ports:
+        - containerPort: 5000

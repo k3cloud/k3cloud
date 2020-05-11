@@ -1,0 +1,21 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: grafana-sample-ingress
+  annotations:
+    cert-manager.io/issuer: grafana-sample-letsencrypt
+    kubernetes.io/ingress.class: "traefik"
+spec:
+  tls:
+  - hosts:
+    - grafana.sample.k3cloud.gq
+    secretName: grafana-sample-secret
+  rules:
+  - host: grafana.sample.k3cloud.gq
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: grafana-sample-svc
+          servicePort: 80

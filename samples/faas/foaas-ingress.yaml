@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: foaas-sample-ingress
+  annotations:
+    cert-manager.io/issuer: foaas-sample-letsencrypt
+    kubernetes.io/ingress.class: "traefik"
+spec:
+  tls:
+  - hosts:
+    - foaas.sample.k3cloud.gq
+    secretName: foaas-sample-secret
+  rules:
+  - host: foaas.sample.k3cloud.gq
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: foaas-sample-svc
+          servicePort: 80

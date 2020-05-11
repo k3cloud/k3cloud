@@ -1,0 +1,28 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: random-webserver-sample-ingress
+  annotations:
+    cert-manager.io/issuer: random-webserver-sample-letsencrypt
+    kubernetes.io/ingress.class: "traefik"
+spec:
+  tls:
+  - hosts:
+    - random-webserver.sample.k3cloud.gq
+    - demo.k3cloud.gq
+    secretName: random-webserver-sample-secret
+  rules:
+  - host: random-webserver.sample.k3cloud.gq
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: random-webserver-sample-svc
+          servicePort: 80
+  - host: demo.k3cloud.gq
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: random-webserver-sample-svc
+          servicePort: 80
