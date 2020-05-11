@@ -1,0 +1,14 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Issuer
+metadata:
+  name: foaas-demo-letsencrypt
+spec:
+  acme:
+    email: renato@carelli.com.ar
+    server: https://acme-v02.api.letsencrypt.org/directory
+    privateKeySecretRef:
+      name: foaas-demo-secret-issuer-account-key
+    solvers:
+    - http01:
+        ingress:
+          class: traefik
