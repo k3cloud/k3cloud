@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vscode-sample-deploy
+  labels:
+    app: vscode-sample
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vscode-sample
+  template:
+    metadata:
+      labels:
+        app: vscode-sample
+    spec:
+      containers:
+      - image: eif0/vscode-py:0.1
+        name: vscode-sample
+        ports:
+        - containerPort: 8080      

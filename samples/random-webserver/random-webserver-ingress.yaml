@@ -9,7 +9,7 @@ spec:
   tls:
   - hosts:
     - random-webserver.sample.k3cloud.gq
-    - demo.k3cloud.gq
+    - sample.k3cloud.gq
     secretName: random-webserver-sample-secret
   rules:
   - host: random-webserver.sample.k3cloud.gq
@@ -19,7 +19,7 @@ spec:
         backend:
           serviceName: random-webserver-sample-svc
           servicePort: 80
-  - host: demo.k3cloud.gq
+  - host: sample.k3cloud.gq
     http:
       paths:
       - path: /

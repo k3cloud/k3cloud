@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: vscode-sample-ingress
+  annotations:
+    cert-manager.io/issuer: vscode-sample-letsencrypt
+    kubernetes.io/ingress.class: "traefik"
+spec:
+  tls:
+  - hosts:
+    - vscode.sample.k3cloud.gq
+    secretName: vscode-sample-secret
+  rules:
+  - host: vscode.sample.k3cloud.gq
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: vscode-sample-svc
+          servicePort: 80
