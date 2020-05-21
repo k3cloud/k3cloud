@@ -2,10 +2,10 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: docs-svc
+  name: docs-k3lab-svc
 spec:
   selector:
-    app: docs
+    app: docs-k3lab
   ports:
   - protocol: TCP
     port: 80
