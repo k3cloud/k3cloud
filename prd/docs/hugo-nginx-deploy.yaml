@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: docs
-        image: eif0/k3lab-docs:0.0.7
+        image: eif0/k3lab-docs:0.0.75-test
         ports:
         - containerPort: 80
