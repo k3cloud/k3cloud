@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+metadata:
+  name: docs
+spec:
+  destination:
+    namespace: default
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: prd/docs
+    repoURL: 'https://github.com/k3cloud/k3cloud'
+    targetRevision: HEAD
+  project: default
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true

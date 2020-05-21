@@ -1,0 +1,21 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: docs-ingress
+  annotations:
+    cert-manager.io/issuer: docs-letsencrypt
+    kubernetes.io/ingress.class: "traefik"
+spec:
+  tls:
+  - hosts:
+    - docs.k3cloud.gq
+    secretName: docs-secret
+  rules:
+  - host: docs.k3cloud.gq
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: docs-svc
+          servicePort: 80
