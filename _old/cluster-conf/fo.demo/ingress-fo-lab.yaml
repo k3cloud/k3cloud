@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: fo-lab-ingress
+  annotations:
+    cert-manager.io/issuer: letsencrypt-prod-fo-lab
+    kubernetes.io/ingress.class: "traefik"
+spec:
+  tls:
+  - hosts:
+    - fo.demo.k3lab.gq
+    secretName: fo-lab-secret
+  rules:
+  - host: fo.demo.k3lab.gq
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: fo-lab-svc
+          servicePort: 80

@@ -1,0 +1,5 @@
+Name: MySQL
+Host: mariadb-svc
+Database: iridium_historic
+user: metrics
+password: <password del usr 'metrics' en mariadb>

@@ -1,0 +1,59 @@
+CIVO home lab:
+
+---
+mysql pwd: mdi92n293nf9uw (b64: bWRpOTJuMjkzbmY5dXc=)
+
+---
+
+k3s cluster management 
+    vpn to nodes:
+        https://www.civo.com/learn/using-a-vpn-to-connect-to-your-civo-instances
+    civo cli:
+        https://www.civo.com/learn/kubernetes-cluster-administration-using-civo-cli
+
+
+
+base:
+    https://www.civo.com/blog/first-kubernetes-cluster
+
+
+k3s use cases:
+    https://www.civo.com/blog/k3s-use-cases
+
+monitoring:
+    https://www.civo.com/learn/connecting-to-grafana-deployed-to-kubernetes-via-prometheus-operator-in-marketplace
+
+admin:
+    https://www.civo.com/learn/deploying-rancher-from-the-civo-app-marketplace
+    https://www.civo.com/learn/setting-up-polaris-on-k8s
+    https://www.civo.com/learn/understanding-kubernetes-clusters-with-octant
+    
+platform setup:
+    ci/cd:
+        https://www.civo.com/learn/install-argo-cd-in-k3s-civo-cloud-for-deploy-applications
+    
+    ghost:
+        https://www.technicallyinteresting.com/building-this-blog-series-part-1/
+        https://www.civo.com/learn/building-a-blog-on-civo-k3s
+    wp:
+        https://www.civo.com/learn/moving-wordpress-to-civo-kubernetes
+    openfaas:
+        https://www.civo.com/learn/deploy-openfaas-with-k3s-on-civo
+        https://blog.alexellis.io/the-worlds-first-managed-k3s/
+        https://www.civo.com/learn/deploying-applications-through-the-civo-kubernetes-marketplace
+    openfaas + minio:
+        https://rancher.com/blog/2019/first-impressions-managed-k3s/
+    registry:
+        https://www.civo.com/learn/set-up-a-private-docker-registry-with-tls-on-kubernetes
+    
+    
+otros:
+    pipelines:
+        https://www.civo.com/learn/deploy-a-web-application-using-gitops-with-github-actions-and-python-in-civo    
+
+para instalar en otros nodos:
+    single node paas:
+        dokku:
+            https://www.civo.com/learn/installing-dokku-a-single-node-paas
+        flynn:
+            https://www.civo.com/learn/installing-flynn-a-relatively-lightweight-paas  

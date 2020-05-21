@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: metrics-lab-app
+  labels:
+    app: metrics-lab
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: metrics-lab
+  template:
+    metadata:
+      labels:
+        app: metrics-lab
+    spec:
+      containers:
+        - name: metrics-lab
+          image: grafana/grafana:7.0.0-beta1
+          ports:
+          - containerPort: 3000

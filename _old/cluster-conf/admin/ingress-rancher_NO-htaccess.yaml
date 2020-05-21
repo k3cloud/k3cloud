@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: cattle-ingress
+  namespace: cattle-system
+  annotations:
+    cert-manager.io/issuer: letsencrypt-prod-admin-lab
+    kubernetes.io/ingress.class: "traefik"
+spec:
+  tls:
+  - hosts:
+    - admin.k3lab.gq
+    secretName: admin-lab-secret
+  rules:
+  - host: admin.k3lab.gq
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: cattle-service
+          servicePort: http

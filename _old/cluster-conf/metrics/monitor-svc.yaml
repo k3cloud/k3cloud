@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: metrics-lab-svc
+spec:
+  selector:
+    app: metrics-lab
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 3000
+  type: ClusterIP

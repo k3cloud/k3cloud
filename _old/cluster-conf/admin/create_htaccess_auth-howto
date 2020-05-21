@@ -1,0 +1,7 @@
+htpasswd -c ./rancher-admin-secret admin
+    (poner la pwd de admin de rancher)
+
+kubectl create secret generic rancher-admin-secret --from-file rancher-admin-secret -o yaml --dry-run=client > rancher-admin-secret.yaml
+
+kubectl apply -f rancher-admin-secret.yaml
+

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fo-lab-app
+  labels:
+    app: fo-lab
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fo-lab
+  template:
+    metadata:
+      labels:
+        app: fo-lab
+    spec:
+      containers:
+      - image: eif0/foaas:2.1.0
+        name: fo-lab
+        ports:
+        - containerPort: 5000
