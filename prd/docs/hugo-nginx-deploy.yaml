@@ -2,21 +2,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: docs-k3lab-deploy
+  name: docs-deploy
   labels:
-    app: docs-k3lab
+    app: docs
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: docs-k3lab
+      app: docs
   template:
     metadata:
       labels:
-        app: docs-k3lab
+        app: docs
     spec:
       containers:
-      - name: docs-k3lab
+      - name: docs
         image: eif0/k3lab-docs:0.0.3
         ports:
         - containerPort: 80
