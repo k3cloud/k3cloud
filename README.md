@@ -3,6 +3,7 @@
 ### Cluster + Domain Setup
 1. Create Cluster: `civo k3s create k3lab --size=g2.medium --nodes=3 --applications=Traefik,metrics-server --wait --save --switch`
 2. apuntar dominios
+3. Wait for all resources to be up (`kubectl get all -A`) and install cert-manager: `civo applications add cert-manager` 
 
 ### k3s cluster setup
 1. Test connectivity: `kubectl get no`
