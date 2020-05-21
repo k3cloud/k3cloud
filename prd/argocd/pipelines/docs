@@ -8,7 +8,7 @@ spec:
   source:
     path: prd/docs
     repoURL: 'https://github.com/k3cloud/k3cloud'
-    targetRevision: HEAD
+    targetRevision: master
   project: default
   syncPolicy:
     automated:
