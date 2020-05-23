@@ -1,0 +1,21 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ssh-key-ingress
+  annotations:
+    cert-manager.io/issuer: ssh-key-letsencrypt
+    kubernetes.io/ingress.class: "traefik"
+spec:
+  tls:
+  - hosts:
+    - ssh-key.carelli.com.ar
+    secretName: ssh-key-secret
+  rules:
+  - host: ssh-key.carelli.com.ar
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: ssh-key-svc
+          servicePort: 80

@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ssh-key-deploy
+  labels:
+    app: ssh-key
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ssh-key
+  template:
+    metadata:
+      labels:
+        app: ssh-key
+    spec:
+      containers:
+      - name: ssh-key
+        image: eif0/static_ssh-key:1.0
+        ports:
+        - containerPort: 80

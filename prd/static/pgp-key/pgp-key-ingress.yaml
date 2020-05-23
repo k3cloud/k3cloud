@@ -1,0 +1,21 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: pgp-key-ingress
+  annotations:
+    cert-manager.io/issuer: pgp-key-letsencrypt
+    kubernetes.io/ingress.class: "traefik"
+spec:
+  tls:
+  - hosts:
+    - pgp.carelli.com.ar
+    secretName: pgp-key-secret
+  rules:
+  - host: pgp.carelli.com.ar
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: pgp-key-svc
+          servicePort: 80
