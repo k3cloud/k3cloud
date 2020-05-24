@@ -10,6 +10,8 @@ spec:
   tls:
   - hosts:
     - pgp.carelli.com.ar
+    - www.carelli.com.ar
+    - renato.carelli.com.ar
     secretName: pgp-key-secret
   rules:
   - host: pgp.carelli.com.ar
@@ -19,3 +21,18 @@ spec:
         backend:
           serviceName: pgp-key-svc
           servicePort: 80
+  - host: www.carelli.com.ar
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: pgp-key-svc
+          servicePort: 80
+  - host: renato.carelli.com.ar
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: pgp-key-svc
+          servicePort: 80
+      
