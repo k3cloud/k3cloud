@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: keyspub-deploy
+  labels:
+    app: keyspub
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: keyspub
+  template:
+    metadata:
+      labels:
+        app: keyspub
+    spec:
+      containers:
+      - name: keyspub
+        image: eif0/static_keyspub:1.0
+        ports:
+        - containerPort: 80
