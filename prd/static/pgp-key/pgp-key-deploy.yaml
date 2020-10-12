@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: pgp-key
-        image: eif0/static_pgp-key:1.5
+        image: eif0/static_pgp-key:1.6
         ports:
         - containerPort: 80
