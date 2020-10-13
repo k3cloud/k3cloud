@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+metadata:
+  name: pgp-key
+spec:
+  destination:
+    namespace: default
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: prd/static/pgp-key
+    repoURL: 'https://github.com/k3cloud/k3cloud'
+    targetRevision: master
+  project: default
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true
+
