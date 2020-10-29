@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: docs
-        image: eif0/k3cloud-docs:0.9.2-test
+        image: eif0/k3cloud-docs:0.9.3-test
         ports:
         - containerPort: 80
