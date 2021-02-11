@@ -8,7 +8,7 @@
 
 ### cert-manager + prometheus 
 1. Install cert-manager:
-  * `kubectl apply -f cert-manager/` [Source](https://github.com/jetstack/cert-manager/releases/download/v1.2.0/cert-manager.yaml)
+  * `kubectl apply -f prd/cert-manager/` [Source](https://github.com/jetstack/cert-manager/releases/download/v1.2.0/cert-manager.yaml)
 
 2. Install prometheus stack
   * `helm repo add prometheus-community https://prometheus-community.github.io/helm-charts`
