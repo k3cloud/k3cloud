@@ -1,11 +1,11 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: pgp-key
+  name: random-webserver
   namespace: argocd
 spec:
   source:
-    path: prd/static/pgp-key
+    path: samples/random-webserver
     repoURL: 'https://github.com/k3cloud/k3cloud'
     targetRevision: master
   destination:
@@ -16,4 +16,4 @@ spec:
     automated:
       prune: false
       selfHeal: true
-
+  

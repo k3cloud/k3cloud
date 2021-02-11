@@ -9,8 +9,8 @@ spec:
     repoURL: 'https://github.com/k3cloud/k3cloud'
     targetRevision: master
   destination:
-    server: 'https://kubernetes.default.svc'
     namespace: default
+    server: 'https://kubernetes.default.svc'
   project: default
   syncPolicy:
     automated:
