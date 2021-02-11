@@ -2,22 +2,20 @@
 
 ## Cluster Setup
 ### Cluster Creation
-1. Create Cluster:
-`civo k3s create k3cloud --applications=Traefik,system-upgrade-controller,metrics-server,Helm --size=g2.medium --nodes=3 --wait --region=NYC1`
-2. Test connectivity: `kubectl get no`
-3. Redirect domains
+* `civo k3s create k3cloud --applications=Traefik,system-upgrade-controller,metrics-server,Helm --size=g2.medium --nodes=3 --wait --region=NYC1`
+* Redirect domains
 
 
 ### cert-manager + prometheus 
 1. Install cert-manager:
-`kubectl apply -f cert-manager/` [Source](https://github.com/jetstack/cert-manager/releases/download/v1.2.0/cert-manager.yaml)
+  * `kubectl apply -f cert-manager/` [Source](https://github.com/jetstack/cert-manager/releases/download/v1.2.0/cert-manager.yaml)
 
 2. Install prometheus stack
-`helm repo add prometheus-community https://prometheus-community.github.io/helm-charts`
-`helm repo add stable https://charts.helm.sh/stable`
-`helm repo update`
-`kubectl apply -f prd/monitoring/monitoring-namespace.yaml`
-`helm install --namespace monitoring prometheus prometheus-community/kube-prometheus-stack`
+  * `helm repo add prometheus-community https://prometheus-community.github.io/helm-charts`
+  * `helm repo add stable https://charts.helm.sh/stable`
+  * `helm repo update`
+  * `kubectl apply -f prd/monitoring/monitoring-namespace.yaml`
+  * `helm install --namespace monitoring prometheus prometheus-community/kube-prometheus-stack`
 
 
 ### argo pipelines setup
