@@ -9,30 +9,21 @@ metadata:
 spec:
   tls:
   - hosts:
-    - pgp.carelli.com.ar
-    - www.carelli.com.ar
-    - renato.carelli.com.ar
+    - pgp.k3cloud.gq
+    - www.k3cloud.gq
     secretName: pgp-key-secret
   rules:
-  - host: pgp.carelli.com.ar
+  - host: pgp.k3cloud.gq
     http:
       paths:
       - path: /
         backend:
           serviceName: pgp-key-svc
           servicePort: 80
-  - host: www.carelli.com.ar
+  - host: www.k3cloud.gq
     http:
       paths:
       - path: /
         backend:
           serviceName: pgp-key-svc
           servicePort: 80
-  - host: renato.carelli.com.ar
-    http:
-      paths:
-      - path: /
-        backend:
-          serviceName: pgp-key-svc
-          servicePort: 80
-      

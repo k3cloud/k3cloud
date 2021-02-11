@@ -9,10 +9,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - ssh-key.carelli.com.ar
+    - ssh-key.k3cloud.gq
     secretName: ssh-key-secret
   rules:
-  - host: ssh-key.carelli.com.ar
+  - host: ssh-key.k3cloud.gq
     http:
       paths:
       - path: /
